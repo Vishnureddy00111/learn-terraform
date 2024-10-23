@@ -56,3 +56,10 @@ output "list_1" {
 output "map1_aws_trainer" {
   value = var.map1["aws"]["trainer"]
 }
+
+#declaration empty variable we can get the value from CLI,Unlike ansible or shell we mush and should declare variable in order to use.
+
+variable "trainer_name" {}
+output "trainer_name" {
+  value = "var.trainer_name"
+}
