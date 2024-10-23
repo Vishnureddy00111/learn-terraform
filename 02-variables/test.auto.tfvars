@@ -1,1 +1,1 @@
-trainer_name = "bob"
+trainer_name = "bobb"
