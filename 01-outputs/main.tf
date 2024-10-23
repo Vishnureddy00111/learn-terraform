@@ -1,3 +1,3 @@
 output "URL" {
-  value = "example.com"
+  value = "example1.com"
 }
