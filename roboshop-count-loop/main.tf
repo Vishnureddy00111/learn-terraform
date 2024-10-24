@@ -26,10 +26,12 @@ resource "aws_instance" "fronted" {
   }
 }
 
-resource "aws_route53_record" "fronted" {
+resource "aws_route53_record" "record" {
+  count = length(var.instance)
   zone_id = "Z03892523DTYJ3OLXCS7D"
-  name    = "$(var.instance[count.index])-dev.vishnuredddy.online"
+  name    = "${var.instance[count.index]}-dev.vishnuredddy.online"
   type    = "A"
   ttl     = "300"
-  records = [aws_instance.fronted.private_ip]
+  records = [aws_instance.instance[count.index].private_ip]
+
 }
