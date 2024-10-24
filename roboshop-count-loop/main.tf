@@ -29,7 +29,7 @@ resource "aws_instance" "instance" {
 resource "aws_route53_record" "record" {
   count = length(var.instance)
   zone_id = "Z03892523DTYJ3OLXCS7D"
-  name    = "${var.instance[count.index]}-dev.vishnuredddy.online"
+  name    = "${var.instance[count.index]}-dev.vishnuredddy1.online"
   type    = "A"
   ttl     = "300"
   records = [aws_instance.instance[count.index].private_ip]
