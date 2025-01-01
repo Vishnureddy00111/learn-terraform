@@ -2,35 +2,36 @@ variable "URL" {
   default = "example.com"
 }
 
-
-#Access variable
+## Access variable
 output "URL" {
   value = var.URL
 }
 
-#variable is combination of some other string.then we have to use ${}
-
+# Variable is a combination of some other string. Then we have to use ${}
 output "URL1" {
   value = "URL - ${var.URL}"
 }
 
-#Data types
+# Data types
 variable "num1" {
-  default = true
+  default = 10
 }
+
 variable "bool1" {
   default = true
 }
-variable "string1" {
+
+variable "str1" {
   default = "Hello"
 }
 
-#number,booleans,string
-# variable type
+# Numbers, Booleans & Strings
 
-variable "string2" {
-  default = "world"
+# Variable types
+variable "str2" {
+  default = "World"
 }
+
 variable "list1" {
   default = [
     10,
@@ -39,27 +40,33 @@ variable "list1" {
     false
   ]
 }
-#list can have combination of multiple data types
+
+# List can have combination of multiple data types also.
+
 variable "map1" {
   default = {
     aws = {
-      trainer="John"
-      duration=30
+      trainer = "John"
+      duration = 30
     }
-
+    devops = {
+      trainer = "Steve"
+      duration = 20
     }
   }
-output "list_1" {
+}
+
+output "list1_1" {
   value = var.list1[2]
 }
 
 output "map1_aws_trainer" {
   value = var.map1["aws"]["trainer"]
+  #value = var.map1["aws"].trainer
 }
 
-#declaration empty variable we can get the value from CLI,Unlike ansible or shell we mush and should declare variable in order to use.
-
+# Declare a empty variable and we can get the value from CLI, Unlike ansible or shell we must and should declare a variable in order to use it.
 variable "trainer_name" {}
 output "trainer_name" {
-  value = "steve"
+  value = var.trainer_name
 }
