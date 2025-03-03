@@ -7,7 +7,6 @@ variable "instances" {
 }
 
 
-
 module "ec2" {
   count = length(var.instances)
   source = "./ec2"

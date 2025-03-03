@@ -1,4 +1,4 @@
-resource "aws_route53_record" "record" {
+ resource "aws_route53_record" "record" {
   zone_id = "Z03892523DTYJ3OLXCS7D"
   name    = "${var.instance_name  }-dev.vishnuredddy2.online"
   type    = "A"
