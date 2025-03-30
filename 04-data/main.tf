@@ -18,3 +18,5 @@ data "aws_ami" "example"{
 resource "aws_security_group" "sg" {
   name = "allow-all"
 }
+
+# we can apply only terraform plan
