@@ -15,7 +15,7 @@ resource "aws_route53_record" "fronted" {
   records = [aws_instance.fronted.private_ip]
 }
 
-
+# zone id means that's the dns zone id
 resource "aws_instance" "mongodb" {
   ami      = "ami-09c813fb71547fc4f"
   instance_type = "t3.small"
