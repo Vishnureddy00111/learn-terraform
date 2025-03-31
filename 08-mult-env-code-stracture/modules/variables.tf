@@ -1,1 +1,1 @@
-variable "evn" {}
+variable "env" {}
