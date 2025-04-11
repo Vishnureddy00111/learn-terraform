@@ -1,5 +1,5 @@
 provider "vault" {
-  address = "http://172.31.80.62:8200"
+  address = "https://172.31.80.62:8200"
   token = "var.vault_token"
   skip_tls_verify: "true"
     }
@@ -20,3 +20,5 @@ data "vault_kv_secret_v2" "example" {
 # output "json" {
 #   value = "data.vault_kv_secret_v2.example.data_json"
 # }
+
+
